@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+    res.send("MindEase Backend is Running ✅");
+});
 
 const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY
